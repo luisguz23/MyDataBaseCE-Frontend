@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username: string ="";
+  name: string ="";
   password: string ="";
  
  
@@ -16,14 +16,15 @@ export class LoginComponent {
  
  
   Login() { 
-    console.log(this.username);
-    console.log(this.password);
+    
     const bodyData = {
-      username: this.username,
+      name: this.name,
       password: this.password,
     };
         this.http.post("http://localhost:8080/login", bodyData).subscribe(  (resultData:any) => {
         console.log(resultData);
+        console.log(this.name);
+        console.log(this.password);
         if (resultData.message == "User does not exist")
         {
       
