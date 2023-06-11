@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConexionComponent } from './conexion.component';
+import { MatrizComponent } from './matriz.component';
 
-describe('ConexionComponent', () => {
-  let component: ConexionComponent;
-  let fixture: ComponentFixture<ConexionComponent>;
+describe('MatrizComponent', () => {
+  let component: MatrizComponent;
+  let fixture: ComponentFixture<MatrizComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ConexionComponent]
+      declarations: [MatrizComponent]
     });
-    fixture = TestBed.createComponent(ConexionComponent);
+    fixture = TestBed.createComponent(MatrizComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
