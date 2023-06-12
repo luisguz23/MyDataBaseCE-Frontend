@@ -8,39 +8,38 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  name: string ="";
+  username: string ="";
   password: string ="";
- 
- 
+
+
   constructor(private router: Router,private http: HttpClient) {}
- 
- 
-  Login() { 
-    
+
+
+  Login() {
+    console.log(this.username);
+    console.log(this.password);
     const bodyData = {
-      name: this.name,
+      username: this.username,
       password: this.password,
     };
         this.http.post("http://localhost:8080/login", bodyData).subscribe(  (resultData:any) => {
         console.log(resultData);
-        console.log(this.name);
-        console.log(this.password);
         if (resultData.message == "User does not exist")
         {
-      
+
           alert("User not exits");
-    
+
         }
         else if(resultData.message == "Login Success")
-    
+
          {
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/matriz');
         }
         else
         {
           alert("Incorrect User and Password not match");
         }
- 
+
       });
     }
 }

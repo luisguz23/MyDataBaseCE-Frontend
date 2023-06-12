@@ -68,4 +68,16 @@ export class MatrizComponent implements OnInit {
       }
     );
   }
+  sendInstructions2() {
+    const instructions = this.instructionText;
+    this.http.post<any>('http://localhost:8080/commit', { instructions }).subscribe(
+      (response) => {
+        console.log("Respuesta del backend:", response);
+        this.updateMatrix(response.name, response.matrix);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
 }

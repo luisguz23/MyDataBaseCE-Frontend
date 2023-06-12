@@ -11,15 +11,15 @@ export class RegisterComponent {
   email: string ="";
   username: string ="";
   password: string ="";
- 
- 
+
+
   constructor(private http: HttpClient )
   {
- 
+
   }
   save()
   {
-  
+
     let bodyData = {
       "email" : this.email,
       "username" : this.username,
@@ -29,7 +29,7 @@ export class RegisterComponent {
     {
         console.log(resultData);
         alert("User Registered Successfully");
- 
+
     });
   }
 
